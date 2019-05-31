@@ -1,0 +1,56 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        House houseVills = new House(3, "Drin", 1989);
+        House houseDrin = new House(2, "Vills", 1999);
+
+        houseVills.print();
+        houseDrin.print();
+
+        houseVills.houseYears();
+        houseDrin.houseYears();
+
+        Console.Read();
+
+    }
+}
+
+public class House
+{
+    short floors;
+    string name;
+    short year;
+
+    public House()
+    {
+        Console.WriteLine("Empty constructor!");
+    }
+
+    public House(string name, short year)
+    {
+        this.name = name;
+        this.year = year;
+    }
+
+    public House(short floors, string name, short year)
+    {
+        this.floors = floors;
+        this.name = name;
+        this.year = year;
+    }
+
+    public void print()
+    {
+        Console.WriteLine($"Количество этажей : {floors}, Имя дома: {name}, Год строительства: {year}");
+    }
+
+    public void houseYears()
+    {
+        short yearNow = Convert.ToInt16(DateTime.Now.Year);
+        int res = yearNow - year;
+        Console.WriteLine(res);
+    }
+}
