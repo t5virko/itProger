@@ -1,0 +1,64 @@
+using System;
+
+
+class Start
+{
+   static void Main(string[] args)
+        {
+            Client cl = new Client("Jon", "Travol", 37);
+            cl.printAll();
+            BankWorker bw = new BankWorker("Sindi", "Prise", 'A');
+            bw.printAll();
+        }
+}
+
+abstract class Human 
+{
+    protected string name;
+    protected string surname;
+    
+    public Human(string name, string surname)
+    {
+        this.name = name;
+        this.surname = surname;
+    }
+    
+    public abstract void takeName();
+    public abstract void takeSurname();
+    public abstract void printAll();
+
+}
+
+class Client : Human 
+{
+    public short num;
+    
+    public Client (string name, string surname, short num) : base (name, surname)
+    {
+        this.num = num;
+    }
+    
+    public override void takeName(){}
+    public override void takeSurname(){}
+    public override void printAll()
+    {
+        Console.WriteLine($"Name: {name}, Surname: {surname}, №: {num}");
+    }
+}
+
+class BankWorker : Human 
+{
+    public char lvl;
+    
+    public BankWorker (string name, string surname, char lvl) : base (name, surname)
+    {
+        this.lvl = lvl;
+    }
+    
+    public override void takeName(){}
+    public override void takeSurname(){}
+    public override void printAll()
+    {
+        Console.WriteLine($"Name: {name}, Surname: {surname}, Level: {lvl}");
+    }
+}
