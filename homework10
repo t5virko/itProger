@@ -1,0 +1,46 @@
+class Car 
+{
+        protected int weight;
+        protected string model;
+        protected char color;
+        protected float speed;
+        
+        static void Main(string[] args){}
+        
+        public void outPut () 
+        {
+            Console.WriteLine("Weight of " + model + " is " + weight + "kg.");
+            Console.WriteLine("Color is " + color + " and it speed - " + speed); 
+        }
+        public Car (int weight, string model, char color, float speed)
+        {
+            this.weight = weight;
+            this.model = model;
+            this.color = color;
+            this.speed = speed;
+        }
+
+}
+
+class Truck : Car
+{
+    
+    public float weightMax = 4.0f;
+    public int wheels;
+    
+    public void newWheels(int wheels)
+    {
+        this.wheels = wheels;
+        Console.WriteLine($"Максимальный вес: {weightMax}, количество колес: {wheels}");
+    }
+    
+    public Truck (int weight, string model, char color, float speed, float weightMax, int wheels) : base (weight, model, color, speed)
+    {
+        this.weight = weight;
+        this.model = model;
+        this.color = color;
+        this.speed = speed;
+        this.weightMax = weightMax;
+        this.wheels = wheels;
+    }
+}
