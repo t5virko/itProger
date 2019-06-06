@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Fish fish = new Fish();
+        fish.walk();
+        Dog dog = new Dog();
+        dog.walk();
+    }
+    
+}
+
+public interface IWalk
+{
+    void walk();
+}
+
+public class Dog : IWalk
+{
+    public void walk()
+    {
+        Console.WriteLine("I walk");
+    }
+}
+
+public class Cat : IWalk
+{
+    public void walk()
+    {
+        Console.WriteLine("I walk");
+    }
+}
+
+public class Fish : IWalk
+{
+    public void walk()
+    {
+        Console.WriteLine("I swim");
+    }
+}
