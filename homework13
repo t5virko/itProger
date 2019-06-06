@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        PC pc = new PC();
+        pc.cpu = "Intell";
+        pc.os = "Windows";
+        pc.weight = 15;
+        pc.timeAW = 1;
+        pc.cores = 6;
+        
+        Console.WriteLine(pc.cpu);
+        Console.Read();
+    }
+}
+
+struct PC
+{
+    public string cpu, os;
+    public short weight, timeAW, cores;
+    
+    /*public PC(string cpu, string os, short weight, short timeAW, short cores)
+    {
+        this.cpu = cpu;
+        this.os = os;
+        this.weight = weight;
+        this.timeAW = timeAW;
+        this.cores = cores;
+    }*/
+}
