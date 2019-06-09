@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    class Program {
+        
+        delegate void Test(params int[] nums);
+
+       public static void Main (string[] args) 
+       {
+           Test test = Sum;
+           test += Average; 
+           test(2, 4, 10); 
+
+       } 
+        
+        static void Sum(params int[] nums) 
+        {
+            int sum = 0;
+            for(int i = 0; i < nums.Length; i++)
+                sum += nums[i];
+
+            Console.WriteLine($"Sum: {sum}");
+        }
+
+        static void Average(params int[] nums) 
+        {
+            int sum = 0;
+            for(int i = 0; i < nums.Length; i++)
+                sum += nums[i];
+            
+            Console.WriteLine($"Average: {sum / nums.Length}"); 
+        }
+    }    
+}
